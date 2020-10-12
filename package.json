@@ -2,7 +2,7 @@
   "homepage": "http://prakash426.github.io/prakashInit",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "predeploy": "npm run build",
+    "preDeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "expo start",
     "android": "expo start --android",
