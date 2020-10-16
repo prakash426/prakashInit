@@ -5,17 +5,17 @@ import { TextInput } from 'react-native';
 import { Button } from 'react-native';
 import { Text, View } from '../components/Themed';
 import { ImageBackground } from "react-native";
-
+//import MaskedView from '@react-native-community/masked-view';
 
 
 export default function TabOneScreen() {
   return (
+
     <ImageBackground
       source={require('../assets/images/bgPage.png')}
       style={styles.backgroundImage}>
 
       <View style={styles.overlayContainer}>
-
         <Text style={styles.title}>If you are not a member with us yet please register here as a new User</Text>
         <Text style={styles.Labels}>First Name</Text>
         <TextInput style={styles.Inputs} />
@@ -32,8 +32,9 @@ export default function TabOneScreen() {
           title="Register"
         />
       </View>
-
     </ImageBackground>
+
+
 
   );
 }
@@ -69,8 +70,7 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 20,
-    fontFamily: "sans-serif",
-    fontWeight: "100"
+    fontWeight: "700"
   },
   separator: {
     marginVertical: 30,
