@@ -1,33 +1,39 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
-import { TextInput } from 'react-native';
+import { AppRegistry, StyleSheet, TextInput } from 'react-native';
 import { Text, View } from '../components/Themed';
-import { Button } from "react-native";
-import { ImageBackground } from "react-native";
+import { Button, ImageBackground } from "react-native";
+import { Component } from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function TabTwoScreen() {
-    return (
-        <ImageBackground
-            source={require('../assets/images/bgPage.png')}
-            style={styles.backgroundImage} >
-            <View style={styles.overlayContainer}>
+class HomeScreen extends Component {
+    render() {
+        return (
+            <ImageBackground
+                source={require('../assets/images/bgPage.png')}
+                style={styles.backgroundImage} >
+                <View style={styles.overlayContainer}>
 
-                <Text style={styles.title}>Login Here</Text>
-                <Text style={styles.Labels}>User ID</Text>
-                <TextInput style={styles.Inputs} />
-                <Text style={styles.Labels}> Password: </Text>
-                <TextInput style={styles.Inputs} secureTextEntry={true} />
-                <View style={styles.buttonAlign}>
-                    <Button
-                        onPress={() => {
-                            alert("Login Successful");
-                        }}
-                        title="Login Page"
-                    />
+                    <Text style={styles.title}>Login Here</Text>
+                    <Text style={styles.Labels}>User ID</Text>
+                    <TextInput style={styles.Inputs} />
+                    <Text style={styles.Labels}> Password: </Text>
+                    <TextInput style={styles.Inputs} secureTextEntry={true} />
                 </View>
-            </View>
-        </ImageBackground>
-    );
+            </ImageBackground>
+        );
+    }
+}
+
+const Stack = createStackNavigator();
+function register() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name="Home" component={HomeScreen} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
 }
 
 const styles = StyleSheet.create({
