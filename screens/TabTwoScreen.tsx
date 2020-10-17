@@ -4,28 +4,45 @@ import { TextInput } from 'react-native';
 import { Text, View } from '../components/Themed';
 import { Button } from "react-native";
 import { ImageBackground } from "react-native";
+import { Component } from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function TabTwoScreen() {
+
+class TabTwoScreen extends Component {
+  render() {
+    return (
+      <ImageBackground
+        source={require('../assets/images/bgPage.png')}
+        style={styles.backgroundImage} >
+        <View style={styles.overlayContainer}>
+
+          <Text style={styles.title}>Login Here</Text>
+          <Text style={styles.Labels}>User ID</Text>
+          <TextInput style={styles.Inputs} />
+          <Text style={styles.Labels}> Password: </Text>
+          <TextInput style={styles.Inputs} secureTextEntry={true} />
+          <Button
+            onPress={() => {
+              alert("Login Successful");
+            }}
+            title="Login Page"
+          />
+        </View>
+      </ImageBackground>
+    );
+  }
+}
+
+const Stack = createStackNavigator();
+function register() {
   return (
-    <ImageBackground
-      source={require('../assets/images/bgPage.png')}
-      style={styles.backgroundImage} >
-      <View style={styles.overlayContainer}>
-
-        <Text style={styles.title}>Login Here</Text>
-        <Text style={styles.Labels}>User ID</Text>
-        <TextInput style={styles.Inputs} />
-        <Text style={styles.Labels}> Password: </Text>
-        <TextInput style={styles.Inputs} secureTextEntry={true} />
-        <Button
-          onPress={() => {
-            alert("Login Successful");
-          }}
-          title="Login Page"
-        />
-      </View>
-    </ImageBackground>
-  );
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={TabTwoScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
 
 const styles = StyleSheet.create({
