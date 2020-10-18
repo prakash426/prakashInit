@@ -12,34 +12,32 @@ import { Component } from 'react';
 
 
 
-class TabOneScreen extends Component {
-  render() {
-    return (
+export default function TabOneScreen() {
+  return (
 
-      <ImageBackground
-        source={require('../assets/images/bgPage.png')}
-        style={styles.backgroundImage} >
+    <ImageBackground
+      source={require('../assets/images/bgPage.png')}
+      style={styles.backgroundImage} >
 
-        <View style={styles.overlayContainer}>
-          <Text style={styles.title}>If you are not a member with us yet please register here as a new User</Text>
-          <Text style={styles.Labels}>First Name</Text>
-          <TextInput style={styles.Inputs} />
-          <Text style={styles.Labels}>Last Name </Text>
-          <TextInput style={styles.Inputs} />
-          <Text style={styles.Labels}>Email </Text>
-          <TextInput style={styles.Inputs} />
-          <Text style={styles.Labels}>Date of Birth </Text>
-          <TextInput style={styles.Inputs} />
-          <Button
-            onPress={() => {
-              alert("Thanks for your registration with I2U!");
-            }}
-            title="Register"
-          />
-        </View>
-      </ImageBackground>
-    );
-  }
+      <View style={styles.overlayContainer}>
+        <Text style={styles.title}>If you are not a member with us yet please register here as a new User</Text>
+        <Text style={styles.Labels}>First Name</Text>
+        <TextInput style={styles.Inputs} />
+        <Text style={styles.Labels}>Last Name </Text>
+        <TextInput style={styles.Inputs} />
+        <Text style={styles.Labels}>Email </Text>
+        <TextInput style={styles.Inputs} />
+        <Text style={styles.Labels}>Date of Birth </Text>
+        <TextInput style={styles.Inputs} />
+        <Button
+          onPress={() => {
+            alert("Thanks for your registration with I2U!");
+          }}
+          title="Register"
+        />
+      </View>
+    </ImageBackground>
+  );
 }
 
 const Stack = createStackNavigator();

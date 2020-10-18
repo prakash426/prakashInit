@@ -9,29 +9,27 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 
-class TabTwoScreen extends Component {
-  render() {
-    return (
-      <ImageBackground
-        source={require('../assets/images/bgPage.png')}
-        style={styles.backgroundImage} >
-        <View style={styles.overlayContainer}>
+export default function TabTwoScreen() {
+  return (
+    <ImageBackground
+      source={require('../assets/images/bgPage.png')}
+      style={styles.backgroundImage} >
+      <View style={styles.overlayContainer}>
 
-          <Text style={styles.title}>Login Here</Text>
-          <Text style={styles.Labels}>User ID</Text>
-          <TextInput style={styles.Inputs} />
-          <Text style={styles.Labels}> Password: </Text>
-          <TextInput style={styles.Inputs} secureTextEntry={true} />
-          <Button
-            onPress={() => {
-              alert("Login Successful");
-            }}
-            title="Login Page"
-          />
-        </View>
-      </ImageBackground>
-    );
-  }
+        <Text style={styles.title}>Login Here</Text>
+        <Text style={styles.Labels}>User ID</Text>
+        <TextInput style={styles.Inputs} />
+        <Text style={styles.Labels}> Password: </Text>
+        <TextInput style={styles.Inputs} secureTextEntry={true} />
+        <Button
+          onPress={() => {
+            alert("Login Successful");
+          }}
+          title="Login Page"
+        />
+      </View>
+    </ImageBackground>
+  );
 }
 
 const Stack = createStackNavigator();
